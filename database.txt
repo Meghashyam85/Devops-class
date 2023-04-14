@@ -1,0 +1,7 @@
+name empID age dept
+Renu 2021 31   EEE
+Suma 2015 25   CSE
+Siva 2010 40   CSE
+Viji 2011 44   ISE
+Ajay 2013 35   ECE~
+
