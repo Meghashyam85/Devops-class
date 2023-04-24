@@ -1,23 +1,18 @@
 #!/bin/bash
 
-echo "Please enter a number:"
-read number
+echo "Enter a number: "
+read num
 
-if [ $number -lt 2 ]; then
-    echo "$number is not a prime number."
-    exit 1
+if [ $num -lt 2 ]; then
+    echo "$num is not a prime number"
+else
+    for (( i=2; i<$num; i++ ))
+    do
+        if [ $((num%i)) -eq 0 ]; then
+            echo "$num is not a prime number"
+            exit 0
+        fi
+    done
+    echo "$num is a prime number"
 fi
-
-i=2
-while [ $i -le `expr $number / 2` ]
-do
-    if [ `expr $number % $i` -eq 0 ]; then
-        echo "$number is not a prime number."
-        exit 1
-    fi
-
-    i=`expr $i + 1`
-done
-
-echo "$number is a prime number."
 
